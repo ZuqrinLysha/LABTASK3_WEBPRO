@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
             margin: 0;
             font-family: Arial, sans-serif;
         }
+
         .container {
             width: 60%;
             margin: auto;
@@ -18,33 +20,41 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         .form-group {
             margin-bottom: 20px;
             display: flex;
             align-items: center;
         }
+
         .form-group label {
             flex-basis: 20%;
             font-weight: bold;
         }
-        .form-group input, .form-group select {
+
+        .form-group input,
+        .form-group select {
             flex-basis: 40%;
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ddd;
             margin-right: 10px;
         }
+
         .form-group .error {
             color: red;
             font-size: 14px;
         }
+
         .form-group .unit {
             flex-basis: 5%;
         }
+
         .button-container {
             display: flex;
             justify-content: center;
         }
+
         button {
             background-color: #F699CD;
             color: white;
@@ -56,11 +66,13 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+
         button:hover {
             background-color: #f367a7;
         }
     </style>
 </head>
+
 <body>
     <img src="images/bg_befday3.jpg" alt="Main Menu Image" style="width: 100%; height: 500px;"><br><br>
     <div class="container">
@@ -100,7 +112,7 @@
                 <input type="date" id="date" name="date" value="<?php echo date("Y-m-d"); ?>" readonly>
             </div>
             <div class="button-container">
-                <button type="button" onclick="validateForm()">Submit</button>
+                <button type="submit">Submit</button>
                 <button type="reset">Clear</button>
                 <button type="button" onclick="searchStudent()">Search</button>
             </div>
@@ -147,12 +159,17 @@
         }
 
         function searchStudent() {
-             window.location.href = 'student_search.php';
-            }
-        
+            window.location.href = 'student_search.php';
+        }
+
     </script>
 
-    
     </div>
+
+    
+
 </body>
+
+
+
 </html>
