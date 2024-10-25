@@ -1,4 +1,3 @@
-// bahgian ni hanya display student information sahaja
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,12 +72,21 @@
             }
         }
 
-        /* echo "<div class='label_input'><div class='label'>Name:</div><div>$name</div></div>";
-              echo "<div class='label_input'><div class='label'>Matric Number:</div><div>$matric_number</div></div>";
-              echo "<div class='label_input'><div class='label'>Class:</div><div>$class</div></div>";
-              echo "<div class='label_input'><div class='label'>Temperature:</div><div>$temperature °C</div></div>";
-              echo "<div class='label_input'><div class='label'>Date:</div><div>$date</div></div>";
-          }*/
+        $sql_display = "SELECT * From students
+        WHERE matric_number = '$matric_number'";
+
+        $display = $conn->query($sql_display);
+        if ($display->num_rows > 0) {
+            while ($row = $display->fetch_assoc()) {
+                echo "<div class='label_input'><div class='label'>Name:</div><div>$name</div></div>";
+                echo "<div class='label_input'><div class='label'>Matric Number:</div><div>$matric_number</div></div>";
+                echo "<div class='label_input'><div class='label'>Class:</div><div>$class</div></div>";
+                echo "<div class='label_input'><div class='label'>Temperature:</div><div>$temperature °C</div></div>";
+                echo "<div class='label_input'><div class='label'>Date:</div><div>$date</div></div>";
+            }
+        } else {
+            echo "No Data Found";
+        }
 
         // Close connection
         $conn->close();
